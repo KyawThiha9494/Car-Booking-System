@@ -1,0 +1,9 @@
+# Node.js
+/Car-Booking-App/node_modules
+
+# .NET Core
+/CarBookingAPI/bin
+/CarBookingAPI/obj
+
+# Docker
+*.log

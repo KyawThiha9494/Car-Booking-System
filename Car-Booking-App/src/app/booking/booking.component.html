@@ -1,0 +1,39 @@
+<div *ngIf="car">
+    <h2>Booking Details</h2>
+    <div class="card">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img [src]="car.imageUrl" class="card-img" alt="{{ car.model }}">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ car.model }}</h5>
+            <p class="card-text">Price per day: ${{ car.pricePerDay }}</p>
+            <p class="card-text">Vehicle No: {{ car.vehicleNo }}</p>
+            <p class="card-text">Specifications: {{ car.specifications }}</p>
+            <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="startDate">Start Date</label>
+                    <input type="date" id="startDate" formControlName="startDate" class="form-control">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="endDate">End Date</label>
+                    <input type="date" id="endDate" formControlName="endDate" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <p class="card-text">Rental Rate: ${{ rentalRate }}</p>
+              <div class="d-flex justify-content-end">
+                <button type="submit" class="btn btn-primary btn-sm" [disabled]="bookingForm.invalid">Submit Booking</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
